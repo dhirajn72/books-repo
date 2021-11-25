@@ -1,0 +1,84 @@
+select distinct(salary) from salary order by salary desc limit 3,1;
+CREATE TABLE customers (customer_id INT ,first_name VARCHAR(255));
+CREATE TABLE orders (order_id INT ,first_name VARCHAR(255));
+
+insert into customers values(1, 'dhiraj');
+insert into customers values(2, 'ram');
+insert into customers values(3, 'krishna');
+insert into customers values(4, 'satya');
+insert into customers values(5, 'vishnu');
+insert into customers values(6, 'krishna');
+insert into customers values(7, 'surya');
+insert into customers values(8, 'bramha');
+insert into customers values(9, 'shankar');
+insert into customers values(10, 'mahesh');
+insert into customers values(11, 'apple');
+insert into customers values(12, 'ball');
+insert into customers values(13, 'cat');
+
+insert into orders  values(2, 'dhiraj');
+insert into orders  values(7, 'ram');
+insert into orders  values(4, 'krishna');
+insert into orders  values(3, 'satya');
+insert into orders  values(6, 'vishnu');
+insert into orders  values(8, 'krishna');
+insert into orders  values(5, 'surya');
+insert into orders  values(9, 'bramha');
+insert into orders  values(1, 'shankar');
+insert into orders  values(10, 'mahesh');
+insert into orders  values(11, 'paper');
+insert into orders  values(12, 'pencil');
+insert into orders  values(13, 'book');
+
+insert into orders  values(20, 'apple');
+insert into orders  values(21, 'ball');
+insert into orders  values(23, 'cat');
+insert into customers values(31, 'apple');
+insert into customers values (32, 'ball');
+insert into customers values(33, 'cat');
+
+Joins
+------
+
+inner join : only matching from both the table.
+--------------------------------------------------
+    select * from customers c inner join orders o  on c.first_name = o.first_name;
+
+
+left join : all the rows from left table, and matching rows from right table
+--------------------------------------------------
+
+    select * from customers c left join orders o  on c.first_name = o.first_name;
+
+
+right join : all the rows from right table, and matching rows from left table
+--------------------------------------------------
+
+    select * from customers c right join orders o  on c.first_name = o.first_name;
+
+full outer join: all the records from the both the tables
+--------------------------------------------------
+    
+    select * from customers c left join orders o  on c.first_name = o.first_name 
+    union
+    select * from customers c right join orders o  on c.first_name = o.first_name;
+
+
+
+-------------------------------------------------
+create table salary (id int DEFAULT NULL,salary int DEFAULT NULL);
+insert into salary values(1, 8000);
+insert into salary values(2, 11000);
+insert into salary values(3, 4000);
+insert into salary values(4, 1000);
+insert into salary values(5, 7000);
+insert into salary values(6, 2000);
+insert into salary values(7, 9000);
+insert into salary values(8, 6000);
+insert into salary values(9, 15000);
+
+
+
+
+
+
